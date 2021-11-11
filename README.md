@@ -27,11 +27,7 @@ Aplicativo de software que permite la gestión de proyectos de investigación.
 [Tablero en Trello](https://trello.com/b/E8PLlLxf/website-to-manage-research-projects)
 
 ## **COMANDOS PARA EJECUTAR LA APP**
-El Framework utilizado para el Frontend en nuestro equipo fue REACT JS, y su comando de ejecución es npm yarn.
+El Framework utilizado para el Frontend en nuestro equipo fue REACT JS, y su comando de ejecución es yarn start.
 
-### `npm yarn`
+### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
