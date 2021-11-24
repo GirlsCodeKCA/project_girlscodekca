@@ -3,9 +3,9 @@
 
 | **#**|**AUTORES** | **MODULOS** |
 | ---|---| --- |
-| 1 |**Martha Carolina Mantilla Cárdenas**  | Módulo de gestión de proyectos Y Módulo de gestión de avances |
-| 2 |**Keidy Mercado Sierra**  | Módulo de gestión de usuarios Y Módulo de gestión de avances |
-| 3 |**Yasmin Andrea Zorro Gutiérrez**  | Módulo de gestión de inscripciones Y Módulo de gestión de avances |
+| 1 |**Keidy Mercado Sierra**  | Módulo de gestión de usuarios |
+| 2 |**Yasmin Andrea Zorro Gutiérrez**  | Módulo de gestión de proyectos - Módulo de gestión de inscripciones |
+| 3 |**Martha Carolina Mantilla Cárdenas**  | Módulo de gestión de avances |
 
 ## **DESCRIPCION DEL PROYECTO**
 Aplicativo de software que permite la gestión de proyectos de investigación. 
