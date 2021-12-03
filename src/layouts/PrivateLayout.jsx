@@ -1,4 +1,4 @@
-import Sidebar from 'components/Sidebar';
+import Sidebar from 'components/Slidebar';
 import { Outlet } from 'react-router';
 import React, { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
