@@ -35,7 +35,7 @@ const Login = () => {
 
   return (
     <div className='flex flex-col items-center justify-center w-full h-full p-10'>
-      <h1 className='text-xl font-bold text-gray-900'>Iniciar sesión</h1>
+      <h1 className='text-xl font-bold text-gray-900'>Iniciar Sesión</h1>
       <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
         <Input name='correo' type='email' label='Correo' required={true} />
         <Input name='password' type='password' label='Contraseña' required={true} />
