@@ -3,8 +3,8 @@
 
 | **#**|**AUTORES** | **MODULOS** |
 | ---|---| --- |
-| 1 |**Keidy Mercado Sierra**  | Módulo de gestión de usuarios |
-| 2 |**Yasmin Andrea Zorro Gutiérrez**  | Módulo de gestión de proyectos - Módulo de gestión de inscripciones |
+| 1 |**Keidy Mercado Sierra**  | Módulo de gestión de usuarios - Módulo de gestión de proyectos |
+| 2 |**Yasmin Andrea Zorro Gutiérrez**  | Módulo de gestión de inscripciones |
 | 3 |**Martha Carolina Mantilla Cárdenas**  | Módulo de gestión de avances |
 
 ## **DESCRIPCION DEL PROYECTO**
