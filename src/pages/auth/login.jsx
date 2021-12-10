@@ -47,7 +47,7 @@ const Login = () => {
       </form>
       <span>¿No tienes una cuenta?</span>
       <Link to='/auth/register'>
-        <span className='text-blue-700'>Regístrate</span>
+        <span className='text-blue-700 font-bold'>Regístrate</span>
       </Link>
     </div>
   );

@@ -38,7 +38,7 @@ const Register = () => {
       <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
         <div className='grid grid-cols-2 gap-5'>
           <Input label='Nombre:' name='nombre' type='text' required />
-          <Input label='Apellido:' name='apellido' type='text' required />
+          <Input label='Apellidos:' name='apellidos' type='text' required />
           <Input label='Documento:' name='identificacion' type='text' required />
           <DropDown label='Rol deseado:' name='rol' required={true} options={Enum_Rol} />
           <Input label='Correo:' name='correo' type='email' required />
@@ -52,7 +52,7 @@ const Register = () => {
       </form>
       <span>¿Ya tienes una cuenta?</span>
       <Link to='/auth/login'>
-        <span className='text-blue-700'>Inicia Sesión</span>
+        <span className='text-blue-700 font-bold'>Inicia Sesión</span>
       </Link>
     </div>
   );

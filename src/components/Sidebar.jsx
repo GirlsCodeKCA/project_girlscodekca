@@ -12,11 +12,11 @@ const SidebarLinks = () => {
       </PrivateComponent>
       <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-book-reader' />
       <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-        <SidebarRoute to='/inscripciones' title='Aprobacion Inscripciones' icon='fas fa-user-check' />
+        <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-user-check' />
       </PrivateComponent>
-      <SidebarRoute to='/page2' title='Pagina2' icon='fas fa-clipboard-list' />
-      <SidebarRoute to='/category1' title='Catego 1' icon='fab fa-amazon' />
-      <SidebarRoute to='/category1/page1' title='Test' icon='fas fa-car' />
+      <SidebarRoute to='/avances' title='Avances' icon='fas fa-clipboard-list' />
+      &nbsp;
+      &nbsp;
       <Logout />
     </ul>
   );
@@ -30,6 +30,10 @@ const Logout = () => {
   };
   return (
     <li onClick={() => deleteToken()}>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
       <NavLink to='/auth/login' className='sidebar-route text-white'>
         <div className='flex items-center'>
           <i className='fas fa-sign-out-alt' />
@@ -43,8 +47,9 @@ const Logout = () => {
 const Logo = () => {
   return (
     <div className='py-3 w-full flex flex-col items-center justify-center'>
+      &nbsp;
       <img src='logo.png' alt='Logo' className='h-16' />
-      <span className='my-2 text-xl font-bold text-center text-white'>PROJECT UNIVERSE</span>
+      <span className='my-2 text-x1 font-bold text-center text-white'>PROJECT UNIVERSE</span>
     </div>
   );
 };
