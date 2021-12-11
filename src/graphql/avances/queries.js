@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const AVANCES = gql`
+const GET_AVANCES = gql`
   query Query($id: String!) {
     Proyecto(_id: $id) {
       _id
@@ -15,4 +15,4 @@ const AVANCES = gql`
   }
 `;
 
-export { AVANCES };
+export { GET_AVANCES };

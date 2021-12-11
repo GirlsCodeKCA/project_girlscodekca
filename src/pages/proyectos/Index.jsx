@@ -4,6 +4,8 @@ import { PROYECTOS } from 'graphql/proyectos/queries';
 import DropDown from 'components/Dropdown';
 import { Dialog } from '@mui/material';
 import { Enum_EstadoProyecto } from 'utils/enums';
+//import { Enum_FaseProyecto } from 'utils/enums';
+//import presupuesto from 'pages/proyectos/Index';
 import ButtonLoading from 'components/ButtonLoading';
 import { EDITAR_PROYECTO } from 'graphql/proyectos/mutations';
 import useFormData from 'hooks/useFormData';
@@ -31,15 +33,18 @@ const IndexProyectos = () => {
     return (
       <div className='p-10 flex flex-col'>
         <div className='flex w-full items-center justify-center'>
-          <h1 className='text-2xl font-bold text-gray-900'>Lista de Proyectos</h1>
+          <h1 className="text-3xl black-600 font-black">LISTA DE PROYECTOS</h1>
         </div>
+        &nbsp;
+        <a href='https://postimg.cc/Mvwm2jRn' target='_blank'><center><img src='https://i.postimg.cc/jdwgfHS4/klipartz-com-3.png' border='0' alt='klipartz-com-3' width='500'/></center></a>
         <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-          <div className='my-2 self-end'>
-            <button className='bg-indigo-500 text-gray-50 p-2 rounded-lg shadow-lg hover:bg-indigo-400'>
+          <div className='my-0 self-end'>
+            <button className='bg-indigo-500 text-white p-2 rounded-lg shadow-lg hover:bg-indigo-400 font-bold'>
               <Link to='/proyectos/nuevo'>Crear nuevo proyecto</Link>
             </button>
           </div>
         </PrivateComponent>
+        &nbsp;
         {queryData.Proyectos.map((proyecto) => {
           return <AccordionProyecto proyecto={proyecto} />;
         })}
@@ -57,7 +62,7 @@ const AccordionProyecto = ({ proyecto }) => {
       <AccordionStyled>
         <AccordionSummaryStyled expandIcon={<i className='fas fa-chevron-down' />}>
           <div className='flex w-full justify-between'>
-            <div className='uppercase font-bold text-gray-100 '>
+            <div className='uppercase font-bold text-black '>
               {proyecto.nombre} - {proyecto.estado}
             </div>
           </div>
@@ -65,7 +70,7 @@ const AccordionProyecto = ({ proyecto }) => {
         <AccordionDetailsStyled>
           <PrivateComponent roleList={['ADMINISTRADOR']}>
             <i
-              className='mx-4 fas fa-pen text-yellow-600 hover:text-yellow-400'
+              className='mx-4 fas fa-edit text-blue-500 hover:text-pink-400'
               onClick={() => {
                 setShowDialog(true);
               }}
@@ -78,11 +83,13 @@ const AccordionProyecto = ({ proyecto }) => {
               inscripciones={proyecto.inscripciones}
             />
           </PrivateComponent>
-          <div>Liderado Por: {proyecto.lider.correo}</div>
+          <div className='font-bold'>Liderado Por: {proyecto.lider.correo}</div>
+
           <div className='flex'>
             {proyecto.objetivos.map((objetivo) => {
               return <Objetivo tipo={objetivo.tipo} descripcion={objetivo.descripcion} />;
             })}
+
           </div>
         </AccordionDetailsStyled>
       </AccordionStyled>
@@ -126,19 +133,26 @@ const FormEditProyecto = ({ _id }) => {
         className='flex flex-col items-center'
       >
         <DropDown label='Estado del Proyecto' name='estado' options={Enum_EstadoProyecto} />
-        <ButtonLoading disabled={false} loading={loading} text='Confirmar' />
+        <ButtonLoading disabled={false} loading={loading} text='Actualizar' />
       </form>
+
+
+
     </div>
   );
 };
 
+
+
 const Objetivo = ({ tipo, descripcion }) => {
   return (
-    <div className='mx-5 my-4 bg-gray-50 p-8 rounded-lg flex flex-col items-center justify-center shadow-xl'>
-      <div className='text-lg font-bold'>{tipo}</div>
+    <div className='mx-5 my-4 bg-purple-900 p-8 rounded-lg flex flex-col items-center justify-center shadow-xl text-white'>
+      <div className='text-lg font-bold text-white'>{tipo}</div>
       <div>{descripcion}</div>
-      <PrivateComponent roleList={['ADMINISTRADOR']}>
-        <div>Editar</div>
+      <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
+        <ButtonLoading 
+          text='Editar'
+        />
       </PrivateComponent>
     </div>
   );
@@ -161,7 +175,7 @@ const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
   useEffect(() => {
     if (data) {
       console.log(data);
-      toast.success('inscripcion creada con exito');
+      toast.success('Inscripcion creada con exito');
     }
   }, [data]);
 

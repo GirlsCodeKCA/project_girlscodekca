@@ -34,22 +34,23 @@ const Login = () => {
   }, [dataMutation, setToken, navigate]);
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full p-10'>
-      <h1 className='text-xl font-bold text-gray-900'>Iniciar Sesión</h1>
-      <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
-        <Input name='correo' type='email' label='Correo' required={true} />
-        <Input name='password' type='password' label='Contraseña' required={true} />
-        <ButtonLoading
-          disabled={Object.keys(formData).length === 0}
-          loading={mutationLoading}
-          text='Iniciar Sesión'
-        />
-      </form>
-      <span>¿No tienes una cuenta?</span>
-      <Link to='/auth/register'>
-        <span className='text-blue-700 font-bold'>Regístrate</span>
-      </Link>
-    </div>
+      <div className='flex flex-col items-center justify-center w-full h-full p-10 bg-blue-200'>
+        
+        <h1 className='text-xl font-bold text-gray-900'>Iniciar Sesión</h1>
+        <form className='flex flex-col ' onSubmit={submitForm} onChange={updateFormData} ref={form}>
+          <Input name='correo' type='email' label='Correo' required={true} />
+          <Input name='password' type='password' label='Contraseña' required={true} />
+          <ButtonLoading
+            disabled={Object.keys(formData).length === 0}
+            loading={mutationLoading}
+            text='Iniciar Sesión'
+          />
+        </form>
+        <span>¿No tienes una cuenta?</span>
+        <Link to='/auth/register'>
+          <span className='text-blue-700 font-bold'>Regístrate</span>
+        </Link>
+      </div>
   );
 };
 

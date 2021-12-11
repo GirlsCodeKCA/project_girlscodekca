@@ -5,8 +5,8 @@ import { UserContext } from 'context/userContext';
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Index from 'pages/Index';
-import Avances from 'pages/avances/NuevoAvances';
-
+import Avances from 'pages/avances/Index';
+//import Footer from 'components/Footer';
 import IndexUsuarios from 'pages/usuarios';
 import EditarUsuario from 'pages/usuarios/editar';
 import AuthLayout from 'layouts/AuthLayout';
@@ -85,14 +85,16 @@ function App() {
                 <Route path='/proyectos/nuevo' element={<NuevoProyecto />} />
                 <Route path='/inscripciones' element={<IndexInscripciones />} />
                 <Route path='avances' element={<Avances />} />
-
+                
               </Route>
               <Route path='/auth' element={<AuthLayout />}>
                 <Route path='register' element={<Register />} />
                 <Route path='login' element={<Login />} />
               </Route>
+              
             </Routes>
           </BrowserRouter>
+          
         </UserContext.Provider>
       </AuthContext.Provider>
     </ApolloProvider>

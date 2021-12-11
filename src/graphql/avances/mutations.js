@@ -32,3 +32,4 @@ mutation Mutation($fecha: Date!, $descripcion: String!, $observaciones: [String]
 `;
 
 export { EDITAR_AVANCE, CREAR_AVANCE };
+

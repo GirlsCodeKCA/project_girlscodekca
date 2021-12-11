@@ -54,7 +54,7 @@ const NuevoProyecto = () => {
   if (loading) return <div>...Loading</div>;
 
   return (
-    <div className='p-10 flex flex-col items-center'>
+    <div className='p-10 flex flex-col items-center bg-blue-200'>
       <div className='self-start'>
         <Link to='/proyectos'>
           <i className='fas fa-arrow-left' />
@@ -68,7 +68,7 @@ const NuevoProyecto = () => {
         <Input name='fechaFin' label='Fecha de Fin' required={true} type='date' />
         <DropDown label='Líder' options={listaUsuarios} name='lider' required={true} />
         <Objetivos />
-        <ButtonLoading text='Crear Proyecto' loading={false} disabled={false} />
+        <center><ButtonLoading text='Crear Proyecto' loading={false} disabled={false} /></center>
       </form>
     </div>
   );

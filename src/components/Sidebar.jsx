@@ -78,7 +78,7 @@ const Sidebar = () => {
 
 const ResponsiveSidebar = () => {
   return (
-    <div>
+    <div >
       <div
         className='sidebar h-full z-40 absolute md:h-full sm:hidden transition duration-150 ease-in-out'
         id='mobile-nav'

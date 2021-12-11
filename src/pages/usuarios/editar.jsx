@@ -10,6 +10,7 @@ import { EDITAR_USUARIO } from 'graphql/usuarios/mutations';
 import DropDown from 'components/Dropdown';
 import { Enum_EstadoUsuario } from 'utils/enums';
 
+
 const EditarUsuario = () => {
   const { form, formData, updateFormData } = useFormData(null);
   const { _id } = useParams();
@@ -53,9 +54,9 @@ const EditarUsuario = () => {
   if (queryLoading) return <div>Cargando....</div>;
 
   return (
-    <div className='flew flex-col w-full h-full items-center justify-center p-10'>
+    <div className='flew flex-col w-full h-full items-center justify-center p-10 bg-blue-200'>
       <Link to='/usuarios'>
-        <i className='fas fa-arrow-left text-gray-600 cursor-pointer font-bold text-xl hover:text-gray-900' />
+        <i className='fas fa-arrow-left text-black cursor-pointer font-bold text-xl hover:text-gray-900' />
       </Link>
       <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Editar Usuario</h1>
       <form

@@ -3,6 +3,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import PrivateRoute from 'components/PrivateRoute';
 import { GET_INSCRIPCIONES } from 'graphql/inscripciones/queries';
 import { APROBAR_INSCRIPCION } from 'graphql/inscripciones/mutaciones';
+//import { RECHAZAR_INSCRIPCION } from 'graphql/inscripciones/mutaciones';
 import ButtonLoading from 'components/ButtonLoading';
 import { toast } from 'react-toastify';
 import {
@@ -20,20 +21,22 @@ const IndexInscripciones = () => {
   if (loading) return <div>Loading...</div>;
   return (
     <PrivateRoute roleList={['ADMINISTRADOR', 'LIDER']}>
-      <div className='p-10'>
-        <div>Pagina de inscripciones</div>
+      <div className='p-10 font-bold text-black'>
+        <div className="text-3xl black-600 font-black"><center>LISTA DE INSCRIPCIONES</center></div>
+        &nbsp;
+        <a href='https://postimages.org/' target='_blank'><center><img src='https://i.postimg.cc/WbHssL9b/klipartz-com-2.png' border='0' alt='klipartz-com-2' width='400'/></center></a>
         <div className='my-4'>
           <AccordionInscripcion
-            titulo='Inscripciones aprobadas'
+            titulo='INSCRIPCIONES APROBADAS'
             data={data.Inscripciones.filter((el) => el.estado === 'ACEPTADO')}
           />
           <AccordionInscripcion
-            titulo='Inscripciones pendientes'
+            titulo='INSCRIPCIONES PENDIENTES'
             data={data.Inscripciones.filter((el) => el.estado === 'PENDIENTE')}
             refetch={refetch}
           />
           <AccordionInscripcion
-            titulo='Inscripciones rechazadas'
+            titulo='INSCRIPCIONES RECHAZADAS'
             data={data.Inscripciones.filter((el) => el.estado === 'RECHAZADO')}
           />
         </div>
@@ -84,17 +87,29 @@ const Inscripcion = ({ inscripcion, refetch }) => {
     });
   };
 
+  
+
   return (
-    <div className='bg-gray-900 text-gray-50 flex flex-col p-6 m-2 rounded-lg shadow-xl'>
+    <div className='bg-purple-900 text-white flex flex-col p-6 m-2 rounded-lg shadow-xl'>
       <span>{inscripcion.proyecto.nombre}</span>
       <span>{inscripcion.estudiante.nombre}</span>
       <span>{inscripcion.estado}</span>
       {inscripcion.estado === 'PENDIENTE' && (
-        <ButtonLoading
+        <ButtonLoading 
           onClick={() => {
             cambiarEstadoInscripcion();
           }}
           text='Aprobar Inscripcion'
+          loading={loading}
+          disabled={false}
+        />
+      )}
+      {inscripcion.estado === 'PENDIENTE' && (
+        <ButtonLoading 
+          onClick={() => {
+            cambiarEstadoInscripcion();
+          }}
+          text='Rechazar Inscripcion'
           loading={loading}
           disabled={false}
         />
