@@ -102,6 +102,7 @@ const Inscripcion = ({ inscripcion, refetch }) => {
           text='Aprobar Inscripcion'
           loading={loading}
           disabled={false}
+          className={"w-64 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700"}
         />
       )}
       {inscripcion.estado === 'PENDIENTE' && (
@@ -112,6 +113,7 @@ const Inscripcion = ({ inscripcion, refetch }) => {
           text='Rechazar Inscripcion'
           loading={loading}
           disabled={false}
+          className={"w-64 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700"}
         />
       )}
     </div>

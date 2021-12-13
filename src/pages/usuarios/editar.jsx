@@ -54,11 +54,11 @@ const EditarUsuario = () => {
   if (queryLoading) return <div>Cargando....</div>;
 
   return (
-    <div className='flew flex-col w-full h-full items-center justify-center p-10 bg-blue-200'>
+    <div className='flew flex-col w-full h-full items-center justify-center p-5 bg-blue-200 font-bold'>
       <Link to='/usuarios'>
-        <i className='fas fa-arrow-left text-black cursor-pointer font-bold text-xl hover:text-gray-900' />
+        <i className='fas fa-arrow-left fa-3x text-black cursor-pointer text-xl hover:text-gray-900 ' />
       </Link>
-      <h1 className='m-4 text-3xl text-gray-800 font-bold text-center'>Editar Usuario</h1>
+      <h1 className='m-0 text-3xl text-gray-800 font-bold text-center'>Editar Usuario</h1>
       <form
         onSubmit={submitForm}
         onChange={updateFormData}
@@ -71,6 +71,7 @@ const EditarUsuario = () => {
           name='nombre'
           defaultValue={queryData.Usuario.nombre}
           required={true}
+          className=''
         />
         <Input
           label='Apellido de la persona:'
@@ -100,12 +101,14 @@ const EditarUsuario = () => {
           required={true}
           options={Enum_EstadoUsuario}
         />
-        <span>Rol del usuario: {queryData.Usuario.rol}</span>
+        <span className={"mt-6"} >Rol del usuario: {queryData.Usuario.rol}</span>
         <ButtonLoading
           disabled={Object.keys(formData).length === 0}
           loading={mutationLoading}
+          className={"w-40 mt-6 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700"}
           text='Confirmar'
         />
+        
       </form>
     </div>
   );

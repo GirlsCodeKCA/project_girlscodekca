@@ -63,14 +63,14 @@ const AccordionProyecto = ({ proyecto }) => {
         <AccordionSummaryStyled expandIcon={<i className='fas fa-chevron-down' />}>
           <div className='flex w-full justify-between'>
             <div className='uppercase font-bold text-black '>
-              {proyecto.nombre} - {proyecto.estado}
+              {proyecto.nombre} - {proyecto.estado} 
             </div>
           </div>
         </AccordionSummaryStyled>
         <AccordionDetailsStyled>
           <PrivateComponent roleList={['ADMINISTRADOR']}>
             <i
-              className='mx-4 fas fa-edit text-blue-500 hover:text-pink-400'
+              className='mx-4 fas fa-pen-square fa-3x text-blue-500 hover:text-pink-400'
               onClick={() => {
                 setShowDialog(true);
               }}
@@ -124,20 +124,23 @@ const FormEditProyecto = ({ _id }) => {
   }, [dataMutation]);
 
   return (
-    <div className='p-4'>
-      <h1 className='font-bold'>Modificar Estado del Proyecto</h1>
+    <div className='p-4 '>
+      <h1 className='font-bold text-center'>Modificar el Estado del Proyecto</h1>
       <form
+        className={"w-96 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700"}
         ref={form}
         onChange={updateFormData}
         onSubmit={submitForm}
         className='flex flex-col items-center'
       >
-        <DropDown label='Estado del Proyecto' name='estado' options={Enum_EstadoProyecto} />
-        <ButtonLoading disabled={false} loading={loading} text='Actualizar' />
+        <DropDown  name='estado' options={Enum_EstadoProyecto} className={"border"}/>
+        <ButtonLoading 
+         disabled={false} 
+         loading={loading} 
+         className={"w-32 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700 mt-6"}
+         text='Actualizar' 
+        />
       </form>
-
-
-
     </div>
   );
 };
@@ -151,6 +154,7 @@ const Objetivo = ({ tipo, descripcion }) => {
       <div>{descripcion}</div>
       <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
         <ButtonLoading 
+          className={"w-32 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700 mt-6"}
           text='Editar'
         />
       </PrivateComponent>
@@ -192,6 +196,7 @@ const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
           onClick={() => confirmarInscripcion()}
           disabled={estado === 'INACTIVO'}
           loading={loading}
+          className={"w-80 h-10 bg-pink-600 text-white font-semibold text-xl mb-6 rounded-lg hover:bg-pink-400  shadow-md disabled:opacity-50 disabled:bg-gray-700 mt-6"}
           text='Inscribirme en este proyecto'
         />
       )}

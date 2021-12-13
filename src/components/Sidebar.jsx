@@ -5,19 +5,21 @@ import PrivateComponent from './PrivateComponent';
 
 const SidebarLinks = () => {
   return (
-    <ul className='mt-12'>
-      <SidebarRoute to='' title='Inicio' icon='fas fa-home' />
-      <PrivateComponent roleList={['ADMINISTRADOR']}>
-        <SidebarRoute to='/usuarios' title='Usuarios' icon='fas fa-user' />
-      </PrivateComponent>
-      <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-book-reader' />
-      <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-        <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-user-check' />
-      </PrivateComponent>
-      <SidebarRoute to='/avances' title='Avances' icon='fas fa-clipboard-list' />
-      &nbsp;
-      &nbsp;
-      <Logout />
+    <ul className='mt-12 font-bold'>
+        <PrivateComponent roleList={['ADMINISTRADOR','LIDER','ESTUDIANTE']} stateUser={['AUTORIZADO']}>
+          <SidebarRoute to='' title='Inicio' icon='fas fa-home ' />
+          <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
+            <SidebarRoute to='/usuarios' title='Usuarios' icon='fas fa-user' />
+          </PrivateComponent>
+          <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-book-reader' />
+          <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
+            <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-user-check' />
+          </PrivateComponent>
+          <SidebarRoute to='/avances' title='Avances' icon='fas fa-clipboard-list' />
+          &nbsp;
+          &nbsp;
+        </PrivateComponent>
+          <Logout />
     </ul>
   );
 };
@@ -34,7 +36,7 @@ const Logout = () => {
       &nbsp;
       &nbsp;
       &nbsp;
-      <NavLink to='/auth/login' className='sidebar-route text-white'>
+      <NavLink to='/auth/login' className='sidebar-route text-white font-bold'>
         <div className='flex items-center'>
           <i className='fas fa-sign-out-alt' />
           <span className='text-sm  ml-2'>Cerrar Sesión</span>

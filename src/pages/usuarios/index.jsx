@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Enum_Rol, Enum_EstadoUsuario } from 'utils/enums';
 import PrivateRoute from 'components/PrivateRoute';
 
+
 const IndexUsuarios = () => {
   const { data, error, loading } = useQuery(GET_USUARIOS);
 
@@ -18,9 +19,9 @@ const IndexUsuarios = () => {
   if (loading) return <div>Cargando....</div>;
 
   return (
-    <PrivateRoute roleList={['ADMINISTRADOR']}>
+    <PrivateRoute roleList={['ADMINISTRADOR', 'LIDER']}>
       <div>
-      &nbsp;
+        &nbsp;
         <center> <h1 class="text-3xl black-600 font-black"> INFORMACION DE LOS USUARIOS </h1> </center>
         <center><a href='https://postimg.cc/T5fpBMxD' target='_blank'><img src='https://i.postimg.cc/D0bLJnYB/bannerusers.jpg' border='0' alt='bannerusers' width="700"/></a> </center>
         <table className='tabla'>
@@ -49,7 +50,7 @@ const IndexUsuarios = () => {
                       <td>{Enum_EstadoUsuario[u.estado]}</td>
                       <td>
                         <Link to={`/usuarios/editar/${u._id}`}>
-                          <center><i className='fas fa-user-edit text-blue-600 hover:text-red-400 cursor-pointer' /></center>
+                          <center><i className='fas fa-user-edit fa-2x text-blue-600 hover:text-red-400 cursor-pointer' /></center>
                         </Link>
                       </td>
                     </tr>
@@ -62,8 +63,10 @@ const IndexUsuarios = () => {
           </tbody>
         </table>
       </div>
+
     </PrivateRoute>
-  );
+      
+   );
 };
 
 export default IndexUsuarios;
