@@ -1,11 +1,10 @@
 # **FRONTEND - GESTION DE PROYECTOS - CICLO IV**
 ## **GIRLS CODE KCA**
 
-| **#**|**AUTORES** | **MODULOS** |
-| ---|---| --- |
-| 1 |**Keidy Mercado Sierra**  | Módulo de gestión de usuarios - Módulo de gestión de proyectos |
-| 2 |**Yasmin Andrea Zorro Gutiérrez**  | Módulo de gestión de inscripciones |
-| 3 |**Martha Carolina Mantilla Cárdenas**  | Módulo de gestión de avances |
+|**AUTORES** | **ROLES** | 
+|---| ---| 
+|**[Martha Carolina Mantilla Cárdenas](https://github.com/carolinamantilla)**  | Scrum Master - Administradora De BD - Desarrolladora |
+|**[Keidy Mercado Sierra](https://github.com/kemesy07)**  | Product Owner - Analista - Desarrolladora |
 
 ## **DESCRIPCION DEL PROYECTO**
 Aplicativo de software que permite la gestión de proyectos de investigación. 
@@ -22,6 +21,9 @@ Aplicativo de software que permite la gestión de proyectos de investigación.
 
 ## **REPOSITORIO DEL FRONTEND**
 [Repositorio en GitHub-Frontend](https://github.com/GirlsCodeKCA/project_girlscodekca)
+
+## **REPOSITORIO DEL BACKEND**
+[Repositorio en GitHub-Backend](https://github.com/GirlsCodeKCA/back_project_girlscodekca)
 
 ## TABLERO DE TRABAJO EN TRELLO:
 [Tablero en Trello](https://trello.com/b/E8PLlLxf/website-to-manage-research-projects)
