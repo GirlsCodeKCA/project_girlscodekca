@@ -2,20 +2,26 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from 'context/authContext';
 import PrivateComponent from './PrivateComponent';
+import { useUser } from 'context/userContext';
 
 const SidebarLinks = () => {
   return (
     <ul className='mt-12 font-bold'>
         <PrivateComponent roleList={['ADMINISTRADOR','LIDER','ESTUDIANTE']} stateUser={['AUTORIZADO']}>
-          <SidebarRoute to='' title='Inicio' icon='fas fa-home ' />
+          
+          <SidebarRoute to='' title='Inicio' icon='fas fa-home fa-lg' />
+
           <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-            <SidebarRoute to='/usuarios' title='Usuarios' icon='fas fa-user' />
+            <SidebarRoute to='/usuarios' title='Usuarios' icon='fas fa-user fa-lg' />
           </PrivateComponent>
-          <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-book-reader' />
-          <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER']}>
-            <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-user-check' />
+          <SidebarRoute to='/proyectos' title='Proyectos' icon='fas fa-book-reader fa-lg' />
+
+          <PrivateComponent roleList={['ADMINISTRADOR', 'LIDER', 'ESTUDIANTE']}>
+            <SidebarRoute to='/inscripciones' title='Inscripciones' icon='fas fa-user-check fa-lg' />
           </PrivateComponent>
-          <SidebarRoute to='/avances' title='Avances' icon='fas fa-clipboard-list' />
+          <SidebarRoute to='/avances' title='Avances' icon='fas fa-clipboard-list fa-lg' />
+          <SidebarRouteImagen to='/perfil' title='Mi Perfil' icon='fas fa-user-cog fa-lg' /> 
+          
           &nbsp;
           &nbsp;
         </PrivateComponent>
@@ -38,7 +44,7 @@ const Logout = () => {
       &nbsp;
       <NavLink to='/auth/login' className='sidebar-route text-white font-bold'>
         <div className='flex items-center'>
-          <i className='fas fa-sign-out-alt' />
+          <i className='fas fa-sign-out-alt fa-lg' />
           <span className='text-sm  ml-2'>Cerrar Sesión</span>
         </div>
       </NavLink>
@@ -107,6 +113,31 @@ const SidebarRoute = ({ to, title, icon }) => {
       >
         <div className='flex items-center'>
           <i className={icon} />
+          <span className='text-sm  ml-2'>{title}</span>
+        </div>
+      </NavLink>
+    </li>
+  );
+};
+
+const SidebarRouteImagen = ({ to, title, icon }) => {
+  const { userData } = useUser();
+  return (
+    <li>
+      <NavLink
+        to={to}
+        className={({ isActive }) =>
+          isActive
+            ? 'sidebar-route text-white bg-pink-500'
+            : 'sidebar-route text-white hover:text-white hover:bg-pink-400'
+        }
+      >
+        <div className='flex items-center'>
+          {userData.foto ? (
+            <img className='h-8 w-8 rounded-full' src={userData.foto} alt='foto' />
+          ) : (
+            <i className={icon} />
+          )}
           <span className='text-sm  ml-2'>{title}</span>
         </div>
       </NavLink>

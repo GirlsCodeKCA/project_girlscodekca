@@ -1,7 +1,7 @@
 const Enum_Rol = {
   ADMINISTRADOR: 'Administrador',
-  ESTUDIANTE: 'Estudiante',
   LIDER: 'Líder',
+  ESTUDIANTE: 'Estudiante',
 };
 
 const Enum_EstadoUsuario = {
@@ -24,6 +24,7 @@ const Enum_FaseProyecto = {
 const Enum_TipoObjetivo = {
   GENERAL: 'General',
   ESPECIFICO: 'Específico',
+  AVANCES: 'Avances'
 };
 
 export { Enum_Rol, Enum_EstadoUsuario, Enum_EstadoProyecto, Enum_FaseProyecto, Enum_TipoObjetivo };

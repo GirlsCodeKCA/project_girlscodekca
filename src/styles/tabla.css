@@ -1,20 +1,20 @@
 .tabla {
-  width: 100%;
-  margin: 20px;
+  width: 85%;
+  margin: 60px;
   overflow-y: scroll;
 }
 
 .tabla td,
 .tabla th {
-  padding: 8px;
+  padding: 6px;
   border: 1px solid rgb(10, 10, 10);
 }
 
 .tabla th {
   background-color: #aa0494;
   color: white;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: left;
 }
 

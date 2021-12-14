@@ -4,9 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserContext } from 'context/userContext';
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Index from 'pages/Index';
+import Home from 'pages/Home';
 import Avances from 'pages/avances/Index';
-//import Footer from 'components/Footer';
 import IndexUsuarios from 'pages/usuarios';
 import EditarUsuario from 'pages/usuarios/editar';
 import AuthLayout from 'layouts/AuthLayout';
@@ -19,6 +18,7 @@ import 'styles/globals.css';
 import 'styles/tabla.css';
 import NuevoProyecto from 'pages/proyectos/NuevoProyecto';
 import IndexInscripciones from 'pages/inscripciones';
+import Profile from 'pages/profile/myProfile';
 
 // import PrivateRoute from 'components/PrivateRoute';
 
@@ -60,6 +60,7 @@ function App() {
   useEffect(() => {
     if (authToken) {
       const decoded = jwt_decode(authToken);
+      console.log('decoded token', decoded);
       setUserData({
         _id: decoded._id,
         nombre: decoded.nombre,
@@ -67,6 +68,7 @@ function App() {
         identificacion: decoded.identificacion,
         correo: decoded.correo,
         rol: decoded.rol,
+        foto: decoded.foto,
       });
     }
   }, [authToken]);
@@ -78,14 +80,15 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<PrivateLayout />}>
-                <Route path='' element={<Index />} />
+                <Route path='' element={<Home />} />
                 <Route path='/usuarios' element={<IndexUsuarios />} />
                 <Route path='/usuarios/editar/:_id' element={<EditarUsuario />} />
                 <Route path='/proyectos' element={<IndexProyectos />} />
                 <Route path='/proyectos/nuevo' element={<NuevoProyecto />} />
                 <Route path='/inscripciones' element={<IndexInscripciones />} />
                 <Route path='avances' element={<Avances />} />
-                
+                <Route path='/perfil' element={<Profile />} />
+                 
               </Route>
               <Route path='/auth' element={<AuthLayout />}>
                 <Route path='register' element={<Register />} />
@@ -96,9 +99,13 @@ function App() {
           </BrowserRouter>
           
         </UserContext.Provider>
+        
       </AuthContext.Provider>
+      
     </ApolloProvider>
+    
   );
+  
 }
 
 export default App;

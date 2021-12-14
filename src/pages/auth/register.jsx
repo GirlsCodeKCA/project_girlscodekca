@@ -67,7 +67,13 @@ const Register = () => {
                         className='mt-2 rounded-lg p-2 w-96 h-10 cursor-auto outline-none text-gray-900 text-base'
                         placeholder="Ingresa tu documento de identidad" required/><br/>
 
-                        <DropDown label='Rol Usuario' name='rol' required={true} options={Enum_Rol} /><br/>
+                        <DropDown 
+                            label='Rol Usuario' 
+                            name='rol' 
+                            required={true} 
+                            options={Enum_Rol} 
+                            className='w-96'
+                        /><br/>
                         
                         <label className='font-medium text-lg' htmlFor="emailUsuario">Correo</label>
                         <input type="email" id="email" name="correo"

@@ -47,16 +47,17 @@ function Login() {
   return (
     <div className='flex h-screen bg-blue-900'> 
         <div className='flex flex-col h-screen bg-blue-800 text-white'>
-            <form onSubmit={submitForm} onChange={updateFormData} ref={form} className='mx-24 mt-20'>
+            <center>
+            <form onSubmit={submitForm} onChange={updateFormData} ref={form} className='mx-18 mt-20 '>
                 <h1 className='text-2xl font-bold'>¡Welcome to Project Universe🚀!</h1>
-                <p className='mt-2 mb-8 text-base'>Ingresa a tu cuenta →</p>
-                <label className='font-medium text-lg'>Correo</label><br/>
+                <p className='mb-8 text-base mt-6'>Ingresa a tu cuenta</p>
+                <label className='font-medium text-lg '>Correo</label><br/>
                 <input name='correo' type="email"  placeholder="example@misiontic.com"
-                className='mt-2 rounded-lg p-2 h-10 w-96 mb-4 cursor-auto outline-none text-blue-900 text-base'>
+                className='mt-2 rounded-lg p-2 h-10 w-64 mb-4 cursor-auto outline-none text-blue-900 text-base'>
                 </input><br/>
                 <label className='font-medium text-lg' >Contraseña</label><br /> 
                 <input type="password" placeholder="******" name='password' 
-                className='mt-2 rounded-lg p-2 h-10 w-96 mb-4 cursor-auto outline-none text-blue-900 text-xl'></input>
+                className='mt-2 rounded-lg p-2 h-10 w-64 mb-4 cursor-auto outline-none text-blue-900 text-xl'></input>
                 <br /> 
                 <br /> 
                 <center><ButtonLoading
@@ -66,7 +67,7 @@ function Login() {
                         text='Iniciar Sesión'
                 /></center>
             </form>  
-               
+            </center>   
             <center><span className='text-base'>¿Aun no tienes una cuenta?</span></center><br/>
               <Link to='/auth/register'>
                 <center><span className='text-red-400 font-bold text-xl '>Regístrate</span></center>
